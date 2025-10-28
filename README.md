@@ -18,7 +18,7 @@ This code allows you to show marketplace prices and links directly on your Shopi
 1. Go to your **Shopify Admin → Online Store → Themes → Edit code**
 2. Under **Snippets**, click **Add a new snippet** and name it:  
    `marketplace-links.liquid`
-3. Paste the code below into the file:
+3. You can render this snippet inside any Liquid file where you want it to appear:
 
       {% render 'marketplace-links' %}
 
