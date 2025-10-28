@@ -1,0 +1,93 @@
+{%- assign ty_price = product.metafields.custom.trendyol_fiyat.value -%}
+{%- assign ty_link  = product.metafields.custom.trendyol_link.value  -%}
+{%- assign hb_price = product.metafields.custom.hepsiburada_fiyat.value -%}
+{%- assign hb_link  = product.metafields.custom.hepsiburada_link.value  -%}
+
+{%- if ty_price or ty_link or hb_price or hb_link -%}
+  <div class="mp-wrap">
+    {%- if ty_price or ty_link -%}
+      <div class="mp-card">
+        <div class="mp-price">
+          {%- if ty_price -%}
+            {{ ty_price | money_with_currency }}
+          {%- else -%}
+            &nbsp;
+          {%- endif -%}
+        </div>
+
+        <a class="mp-link" href="{{ ty_link | default: '#' }}"
+           {% if ty_link %}target="_blank"{% endif %}
+           rel="noopener nofollow sponsored"
+           aria-label="Trendyol'da ürünü gör">
+          <img
+            class="mp-logo"
+            src="https://cdn.shopify.com/s/files/1/0955/3936/4115/files/trendyol.png?v=1761294898"
+            alt="Trendyol"
+            loading="lazy"
+            width="160"
+            height="48">
+        </a>
+      </div>
+    {%- endif -%}
+
+    {%- if hb_price or hb_link -%}
+      <div class="mp-card">
+        <div class="mp-price">
+          {%- if hb_price -%}
+            {{ hb_price | money_with_currency }}
+          {%- else -%}
+            &nbsp;
+          {%- endif -%}
+        </div>
+
+        <a class="mp-link" href="{{ hb_link | default: '#' }}"
+           {% if hb_link %}target="_blank"{% endif %}
+           rel="noopener nofollow sponsored"
+           aria-label="Hepsiburada'da ürünü gör">
+          <img
+            class="mp-logo"
+            src="https://cdn.shopify.com/s/files/1/0955/3936/4115/files/hepsiburada.png?v=1761294898"
+            alt="Hepsiburada"
+            loading="lazy"
+            width="180"
+            height="48">
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <style>
+    .mp-wrap {
+      display: grid;
+      gap: 12px;
+    }
+    .mp-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      border: 1px solid #d8e0d2;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: #E3E8DD;
+    }
+    .mp-price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #B22222;
+    }
+    .mp-link:hover {
+      transform: translateY(-2px);
+    }
+    .mp-logo {
+      display: block;
+      height: 34px;
+      width: auto;
+      max-width: 200px;
+    }
+    @media (max-width: 640px) {
+      .mp-card { grid-template-columns: 1fr auto; }
+      .mp-price { font-size: 1.1rem; }
+      .mp-logo { height: 30px; }
+    }
+  </style>
+{%- endif -%}
