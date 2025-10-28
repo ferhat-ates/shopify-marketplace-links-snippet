@@ -19,9 +19,9 @@ This code allows you to show marketplace prices and links directly on your Shopi
 2. Under **Snippets**, click **Add a new snippet** and name it:  
    `marketplace-links.liquid`
 3. Paste the code below into the file:
-
 ```liquid
 {% render 'marketplace-links' %}
+
 
 Make sure you have the following metafields created under your Product metafields:
 | Namespace | Key               | Type   | Example Value                                                       |
