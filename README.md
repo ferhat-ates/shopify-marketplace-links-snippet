@@ -29,7 +29,7 @@ Make sure you have the following metafields created under your Product metafield
 | Namespace | Key               | Type   | Example Value                                                       |
 | --------- | ----------------- | ------ | ------------------------------------------------------------------- |
 | custom    | trendyol_link     | URL    | [https://www.trendyol.com/](https://www.trendyol.com)... |
-| custom    | trendyol_fiyat    | Number | 499.90                                                              |
+| custom    | trendyol_fiyat    | Money  | 499.90                                                              |
 | custom    | hepsiburada_link  | URL    | [https://www.hepsiburada.com/](https://www.hepsiburada.com/)...     |
-| custom    | hepsiburada_fiyat | Number | 505.00                                                              |
+| custom    | hepsiburada_fiyat | Money  | 505.00                                                              |
 
